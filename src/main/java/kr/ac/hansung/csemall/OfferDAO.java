@@ -2,12 +2,16 @@ package kr.ac.hansung.csemall;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
+@Component("offerDAO")
 public class OfferDAO {
 	
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
